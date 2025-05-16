@@ -1,0 +1,9 @@
+module load AGAT/0.9.2-GCC-11.2.0
+#convert gff to gtf
+agat_convert_sp_gff2gtf.pl --gff input_file.gff --gtf_version 3 --output output_file.gtf
+#fix overlapping genes
+agat_sp_fix_overlaping_genes.pl -f input_file -o output_file
+#manage IDs to assign identifiers 
+agat_sp_manage_IDs.pl
+#address duplicated locations
+agat_sp_fix_features_locations_duplicated.pl
